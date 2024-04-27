@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing Game UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <iframe src="" frameborder="0" id="gameWin"></iframe><br />
+    <button
+      onclick="document.getElementById('gameWin').requestFullscreen()"
+      id="fullscreenGameButton"
+    >
+      Fullscreen
+    </button>
+    <script>
+      var urlPar = new URLSearchParams(window.location.search);
+      document.getElementById("gameWin").src = "gfiles/" + urlPar.get("game");
+    </script>
+  </body>
+</html>
